@@ -1,0 +1,9 @@
+\:root {
+  --k-primary: #{$primary};
+  --k-secondary: #{$secondary}
+}
+
+a {
+  color: var(--k-primary);
+  text-decoration: none;
+}
