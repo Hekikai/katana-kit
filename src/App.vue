@@ -1,9 +1,28 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import TheHeader from '@/components/layout/TheHeader.vue'
+import TheSidebar from '@/components/layout/TheSidebar.vue'
+</script>
 
 <template>
-    <router-view />
+    <div class="container">
+        <the-header />
+        <the-sidebar />
+        <div class="content">
+            <router-view />
+        </div>
+    </div>
 </template>
 
 <style lang="scss">
-@import './styles/global.scss';
+@import './css/index.scss';
+
+.content {
+    max-width: 1400px;
+    margin-left: 250px;
+    padding: 30px;
+    transition: 0.2s;
+    &_full {
+        margin-left: 0;
+    }
+}
 </style>

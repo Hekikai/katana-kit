@@ -8,6 +8,16 @@ const router = createRouter({
             component: () => import('@/views/StartPage.vue'),
             name: 'Start',
         },
+        {
+            path: '/typography',
+            component: () => import('@/views/Typography.vue'),
+            name: 'Typography',
+        },
+        {
+            path: '/button',
+            component: () => import('@/views/Button.vue'),
+            name: 'Button',
+        },
     ],
 })
 
