@@ -1,9 +1,19 @@
-\:root {
-  --k-primary: #{$primary};
-  --k-secondary: #{$secondary}
+:root {
+    --k-primary: #{$primary};
+    --k-primary-hover: #{$primary-hover};
+    --k-secondary: #{$secondary};
+    --k-secondary-hover: #{$secondary-hover};
+    --k-success: #{$success};
+    --k-success-hover: #{$success-hover};
+    --k-info: #{$info};
+    --k-info-hover: #{$info-hover};
+    --k-warning: #{$warning};
+    --k-warning-hover: #{$warning-hover};
+    --k-danger: #{$danger};
+    --k-danger-hover: #{$danger-hover};
 }
 
 a {
-  color: var(--k-primary);
-  text-decoration: none;
+    color: var(--k-primary);
+    text-decoration: none;
 }

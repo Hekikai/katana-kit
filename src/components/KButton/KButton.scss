@@ -1,0 +1,91 @@
+.k-btn {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 0 20px;
+    height: 40px;
+    color: inherit;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.2s;
+
+    // colors
+    &--primary {
+        background: var(--k-primary);
+        border: 1px solid var(--k-primary);
+        &:enabled:hover {
+            background: var(--k-primary-hover);
+        }
+    }
+
+    &--secondary {
+        background: var(--k-secondary);
+        border: 1px solid var(--k-secondary);
+        &:enabled:hover {
+            background: var(--k-secondary-hover);
+        }
+    }
+
+    &--success {
+        background: var(--k-success);
+        border: 1px solid var(--k-success);
+        &:enabled:hover {
+            background: var(--k-success-hover);
+        }
+    }
+
+    &--info {
+        background: var(--k-info);
+        border: 1px solid var(--k-info);
+        &:enabled:hover {
+            background: var(--k-info-hover);
+        }
+    }
+
+    &--warning {
+        background: var(--k-warning);
+        border: 1px solid var(--k-warning);
+        &:enabled:hover {
+            background: var(--k-warning-hover);
+        }
+    }
+
+    &--danger {
+        background: var(--k-danger);
+        border: 1px solid var(--k-danger);
+        &:enabled:hover {
+            background: var(--k-danger-hover);
+        }
+    }
+
+    &--rounded {
+        border-radius: $button-rounded-border-radius;
+    }
+
+    &--outline {
+        background: transparent;
+        // TODO: text color as the border color
+        color: currentColor;
+        &:before {
+            border: 1px solid currentColor;
+        }
+
+        &:hover {
+            color: $button-text-color;
+        }
+    }
+
+    &.disabled {
+        opacity: 0.7 !important;
+        cursor: default;
+    }
+
+    &.icon {
+        // TODO: added sizes for icon with adaptive
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        padding: 0;
+    }
+}

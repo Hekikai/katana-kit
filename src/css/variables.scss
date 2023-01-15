@@ -1,7 +1,17 @@
 // Colors
+// TODO: align
 $primary       : #6979f8 !default;
 $primary-hover : #a5affb !default;
 $secondary     : #be52f2 !default;
+$secondary-hover: #dba5f5 !default;
+$success: #00c48c !default;
+$success-hover: #7ddfc3 !default;
+$info: #0084f4 !default;
+$info-hover: #66b5f8 !default;
+$warning: #ffa26b !default;
+$warning-hover: #ffc7a6 !default;
+$danger: #ff647c !default;
+$danger-hover: #dfafbb !default;
 
 // Typography
 $typography-font-family: 'SF Pro Text', '-apple-system', 'Helvetica Neue',
@@ -19,3 +29,8 @@ $h-tags  : (h1: map-get($headings, 'h1'), h2: map-get($headings, 'h2'),
 
 $body-line-height : 1.5 !default;
 $body-font-size   : 14px !default;
+
+// Button
+$button-text-color: #fff !default;
+$button-text-color-outline: #{$primary} !default;
+$button-rounded-border-radius: 16px !default;
