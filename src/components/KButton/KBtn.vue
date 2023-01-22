@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { IColors } from '@/types'
 
 withDefaults(
     defineProps<{
         label: string
-        color?: string
+        color?: IColors
         disabled?: boolean
         rounded?: boolean
         outlined?: boolean
