@@ -14,8 +14,6 @@ withDefaults(
     }>(),
     {
         label: 'Button',
-        color: 'primary',
-        default: 'normal',
     },
 )
 
@@ -33,7 +31,7 @@ const kButtonClick = () => {
         @click="kButtonClick"
         :class="[
             'k-btn',
-            `k-btn--${color}`,
+            color ? `k-btn--${color}` : false,
             { 'k-btn--rounded': rounded },
             { disabled: disabled },
             { 'k-btn--outline': outlined },
