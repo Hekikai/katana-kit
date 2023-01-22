@@ -11,6 +11,55 @@
     --k-warning-hover: #{$warning-hover};
     --k-danger: #{$danger};
     --k-danger-hover: #{$danger-hover};
+
+    .text-primary {
+        color: var(--k-primary) !important;
+    }
+    .bg-primary {
+        background: var(--k-primary) !important;
+    }
+
+    .text-secondary {
+        color: var(--k-secondary) !important;
+    }
+    .bg-secondary {
+        background: var(--k-secondary) !important;
+    }
+
+    .text-success {
+        color: var(--k-success) !important;
+    }
+    .bg-success {
+        background: var(--k-success) !important;
+    }
+
+    .text-info {
+        color: var(--k-info) !important;
+    }
+    .bg-info {
+        background: var(--k-info) !important;
+    }
+
+    .text-warning {
+        color: var(--k-warning) !important;
+    }
+    .bg-warning {
+        background: var(--k-warning) !important;
+    }
+
+    .text-danger {
+        color: var(--k-danger) !important;
+    }
+    .bg-danger {
+        background: var(--k-danger) !important;
+    }
+
+    .text-white {
+        color: #fff !important;
+    }
+    .bg-white {
+        background: #fff !important;
+    }
 }
 
 a {
