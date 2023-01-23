@@ -18,6 +18,11 @@ const router = createRouter({
             component: () => import('@/views/KBtn.vue'),
             name: 'Button',
         },
+        {
+            path: '/checkbox',
+            component: ()=> import('@/views/KCheckbox.vue'),
+            name: 'Checkbox'
+        }
     ],
 })
 
