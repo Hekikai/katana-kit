@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { IColors } from '@/types'
+import { IColors, ISizeName } from '@/types'
+import useSize from '@/composables/useSize'
 
-withDefaults(
+const props = withDefaults(
     defineProps<{
         label: string
         color?: IColors
@@ -10,13 +11,14 @@ withDefaults(
         rounded?: boolean
         outlined?: boolean
         icon?: string
-        // TODO: add sizes with composable
-        size?: string
+        size?: ISizeName
     }>(),
     {
         label: 'Button',
     },
 )
+
+const sizeProperties = useSize(props)
 
 const emit = defineEmits<{
     (e: 'click'): void
@@ -38,6 +40,7 @@ const kButtonClick = () => {
             { 'k-btn--outline': outlined },
             { icon: icon },
         ]"
+        :style="sizeProperties"
         :disabled="disabled"
     >
         <span v-if="icon">

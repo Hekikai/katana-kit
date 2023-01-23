@@ -64,7 +64,14 @@
             label="@click"
             color="warning"
             @click="onClick"
+            size="sm"
         />
+      <k-btn
+        label="@click"
+        color="warning"
+        @click="onClick"
+        size="lg"
+      />
     </div>
 </template>
 
@@ -80,6 +87,7 @@ const colors = {
     info: 'info',
     warning: 'warning',
 } satisfies Record<IColors, IColors>
+
 const onClick = () => {
     alert('Click!')
 }
