@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
+import { routes } from '@/router/routes'
 
-const links = ref([
-    { name: 'Typography', href: '/typography' },
-    { name: 'Button', href: '/button' },
-    { name: 'Checkbox', href: '/checkbox' },
-])
+const links = computed(() =>
+    routes
+        .filter((route) => !route.path.endsWith('/'))
+        .map((route) => ({
+            name: route.name,
+            href: route.path,
+        })),
+)
 </script>
 
 <template>
