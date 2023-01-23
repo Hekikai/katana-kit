@@ -25,7 +25,7 @@
 
   <h2>Checkbox group</h2>
   <div class="line line__block">
-    <p>Selected heroes: {{ selectedAnime }}</p>
+    <p>Selected array: {{ selectedAnime }}</p>
     <k-checkbox-group v-model:value="selectedAnime" :options="animeList" name="anime"/>
   </div>
 </template>
