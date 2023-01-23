@@ -7,6 +7,7 @@ const props = withDefaults(
         label: string
         checked: boolean
         disabled?: boolean
+        group?: boolean
     }>(),
     {
         name: '',
@@ -18,11 +19,19 @@ const props = withDefaults(
 
 const emit = defineEmits<{
     (e: 'update:checked', v: boolean): void
+  // TODO: type
+    (e: 'handle-group', v: string): void
 }>()
 
 const handleInput = (event: Event) => {
     const isChecked = (<HTMLInputElement>event.target).checked
-    emit('update:checked', isChecked)
+
+    if (props.group) {
+      // TODO: type
+        emit('handle-group', { optionId: props.id, checked: isChecked })
+    } else {
+        emit('update:checked', isChecked)
+    }
 }
 </script>
 

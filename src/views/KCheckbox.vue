@@ -22,15 +22,31 @@
             :disabled="isDisabled"
         />
     </div>
+
+  <h2>Checkbox group</h2>
+  <div class="line line__block">
+    <p>Selected heroes: {{ selectedAnime }}</p>
+    <k-checkbox-group v-model:value="selectedAnime" :options="animeList" name="anime"/>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import KCheckbox from '@/components/KCheckbox/KCheckbox.vue'
+import KCheckboxGroup from "@/components/KCheckbox/KCheckboxGroup.vue";
 
 const isChecked = ref<boolean>(true)
 const isDisabled = ref<boolean>(true)
 const isDisableChecked = ref<boolean>(true)
+
+const animeList = ref([
+  {name: 'Kimi no na wa', id: '1'},
+  {name: 'Black Clover', id: '2'},
+  {name: 'Boku no Hero Academia', id: '3'},
+  {name: 'Kuroko no Basket', id: '4'}
+])
+
+const selectedAnime = ref(['1' , '3'])
 </script>
 
 <style scoped>
@@ -39,5 +55,9 @@ const isDisableChecked = ref<boolean>(true)
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 1rem;
+}
+
+.line__block {
+  display: block;
 }
 </style>
