@@ -1,16 +1,21 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
+import { routes } from '@/router/routes'
 
-const links = ref([
-    { name: 'Typography', href: '/typography' },
-    { name: 'Button', href: '/button' },
-])
+const links = computed(() =>
+    routes
+        .filter((route) => !route.path.endsWith('/'))
+        .map((route) => ({
+            name: route.name,
+            href: route.path,
+        })),
+)
 </script>
 
 <template>
     <div class="sidebar">
         <router-link
-          class="sidebar__link"
+            class="sidebar__link"
             v-for="link in links"
             :key="link.name"
             :to="link.href"
@@ -22,31 +27,26 @@ const links = ref([
 
 <style scoped lang="scss">
 .sidebar {
-  position: fixed;
-  left: 0;
-  top: 62px;
-  height: 100%;
-  width: 250px;
-  padding: 20px;
-
-  background: #fff;
-  transition: 0.2s;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
-  transform: translateX(0);
-
-  &__link {
-    display: block;
-    margin-bottom: 10px;
-    padding: 10px;
-
-    border-radius: 12px;
-    border: 2px solid #fff;
+    left: 0;
+    top: 62px;
+    height: 100%;
+    background: #fff;
+    position: fixed;
+    width: 250px;
+    padding: 20px;
     transition: 0.2s;
-    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
 
-    &:hover {
-      border-color: var(--primary-color);
+    &__link {
+        display: block;
+        border-radius: 12px;
+        border: 2px solid #fff;
+        transition: 0.2s;
+        font-weight: bold;
+        margin-bottom: 10px;
+        &:hover {
+            color: var(--k-primary-hover);
+        }
     }
-  }
 }
 </style>
