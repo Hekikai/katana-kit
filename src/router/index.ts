@@ -15,7 +15,7 @@ const router = createRouter({
         },
         {
             path: '/button',
-            component: () => import('@/views/Button.vue'),
+            component: () => import('@/views/KBtn.vue'),
             name: 'Button',
         },
     ],
