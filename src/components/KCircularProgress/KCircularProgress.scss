@@ -1,0 +1,30 @@
+.k-progress {
+    &-circle {
+        position: relative;
+        margin-bottom: 20px;
+        width: 120px;
+        height: 120px;
+
+        &-svg {
+            transform: rotate(-90deg);
+        }
+
+        &-percent {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            top: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        &-line {
+            stroke-dasharray: 100;
+            transition: 0.5s;
+        }
+    }
+}

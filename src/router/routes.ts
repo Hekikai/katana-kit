@@ -24,4 +24,9 @@ export const routes = [
         component: () => import('@/views/KRadio.vue'),
         name: 'Radio',
     },
+    {
+        path: '/progress',
+        component: () => import('@/views/KProgress.vue'),
+        name: 'Progress',
+    },
 ]
