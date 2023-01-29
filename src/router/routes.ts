@@ -29,4 +29,9 @@ export const routes = [
         component: () => import('@/views/KProgress.vue'),
         name: 'Progress',
     },
+    {
+        path: '/input',
+        component: () => import('@/views/KInput.vue'),
+        name: 'Input',
+    },
 ]

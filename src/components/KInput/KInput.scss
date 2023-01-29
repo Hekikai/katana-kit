@@ -1,0 +1,60 @@
+.input {
+    &-container {
+        position: relative;
+    }
+
+    &-error {
+        background: var(--k-danger);
+        margin-top: 4px;
+        border-radius: 7px;
+        font-size: 13px;
+        color: #fff;
+        padding: 5px;
+    }
+}
+
+.k-input {
+    border: 1px solid var(--k-primary);
+    padding: 0 10px;
+    height: 40px;
+    border-radius: 7px;
+    font-size: 15px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    &:focus {
+        & + .k-input-label {
+            z-index: 1;
+            opacity: 1;
+            top: -20px;
+        }
+    }
+    &:not(:placeholder-shown) {
+        & + .k-input-label {
+            z-index: 1;
+            opacity: 1;
+            top: -20px;
+        }
+    }
+
+    &-label {
+        font-weight: bold;
+        display: block;
+        position: absolute;
+        top: 20px;
+        opacity: 0;
+        z-index: -1;
+        transition: 0.3s;
+        font-size: 13px;
+        color: var(--k-primary);
+    }
+}
+
+//.v-enter-active,
+//.v-leave-active {
+//  transition: opacity 0.5s ease;
+//}
+//.v-enter-from,
+//.v-leave-to {
+//  opacity: 0;
+//}
