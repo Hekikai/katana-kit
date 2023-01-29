@@ -15,10 +15,7 @@ withDefaults(
 </script>
 
 <template>
-    <div
-        class="k-progress-container"
-        :style="{ maxWidth: maxWidth }"
-    >
+    <div :style="{ maxWidth: maxWidth }">
         <span
             class="k-progress-percent"
             :style="{ color: `var(--k-${color})` }"

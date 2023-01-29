@@ -3,9 +3,10 @@
     <h2>Progress bar</h2>
     <div class="line line__block">
         <k-progress
+            class="k-mb-xs"
             max-width="400px"
             :percent="percentMap.bar"
-            color="secondary"
+            color="info"
         />
         <k-btn
             label="Add 10 percent"
@@ -16,7 +17,7 @@
     </div>
 
     <h2>Circular progress bar</h2>
-    <k-circular-progress :percent="percentMap.circle" />
+    <k-circular-progress :percent="percentMap.circle" class="k-mb-xs"/>
     <k-btn
         label="Add 10 percent"
         @click="addPercent('circle')"
