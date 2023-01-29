@@ -10,4 +10,3 @@ export default {
     <h1>UI Kit</h1>
 </template>
 
-<style scoped></style>

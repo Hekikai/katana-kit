@@ -19,4 +19,9 @@ export const routes = [
         component: () => import('@/views/KCheckbox.vue'),
         name: 'Checkbox',
     },
+    {
+        path: '/radio',
+        component: () => import('@/views/KRadio.vue'),
+        name: 'Radio',
+    },
 ]

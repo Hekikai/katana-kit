@@ -1,8 +1,15 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+
 interface CheckboxOption {
     optionId: string
     checked: boolean
 }
+
+const CheckboxType = {
+    switch: 'switch',
+    checkbox: 'checkbox',
+} as const
 
 const props = withDefaults(
     defineProps<{
@@ -13,12 +20,14 @@ const props = withDefaults(
         checked: boolean
         disabled?: boolean
         group?: boolean
+        type?: keyof typeof CheckboxType
     }>(),
     {
         name: '',
         value: '',
         label: '',
         checked: false,
+        type: 'checkbox',
     },
 )
 
@@ -26,6 +35,8 @@ const emit = defineEmits<{
     (e: 'update:checked', v: boolean): void
     (e: 'handle-group', v: CheckboxOption): void
 }>()
+
+const isItSwitch = computed(() => props.type === 'switch')
 
 const handleInput = (event: Event) => {
     const isChecked = (<HTMLInputElement>event.target).checked
@@ -40,17 +51,30 @@ const handleInput = (event: Event) => {
 </script>
 
 <template>
-    <input
-        class="k-checkbox"
-        type="checkbox"
-        :name="name"
-        :value="value"
-        :id="id"
-        :checked="checked"
-        :disabled="disabled"
-        @input="handleInput"
-    />
-    <label :for="id">{{ label }}</label>
+    <!--  TODO: don't line this div.  remove it with render-function-->
+    <div :class="{ 'k-switch-container': isItSwitch }">
+        <input
+            :class="[
+                { 'k-checkbox': type === 'checkbox' },
+                { 'k-switch': isItSwitch },
+            ]"
+            type="checkbox"
+            :name="name"
+            :value="value"
+            :id="id"
+            :checked="checked"
+            :disabled="disabled"
+            @input="handleInput"
+        />
+        <label :for="id">{{ label }}</label>
+        <label
+            v-if="isItSwitch"
+            class="k-switch__label"
+            :for="id"
+        >
+            {{ label }}
+        </label>
+    </div>
 </template>
 
 <style scoped></style>
