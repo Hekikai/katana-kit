@@ -1,4 +1,9 @@
 <script setup lang="ts">
+interface CheckboxOption {
+    optionId: string
+    checked: boolean
+}
+
 const props = withDefaults(
     defineProps<{
         name: string
@@ -19,16 +24,15 @@ const props = withDefaults(
 
 const emit = defineEmits<{
     (e: 'update:checked', v: boolean): void
-  // TODO: type
-    (e: 'handle-group', v: string): void
+    (e: 'handle-group', v: CheckboxOption): void
 }>()
 
 const handleInput = (event: Event) => {
     const isChecked = (<HTMLInputElement>event.target).checked
 
     if (props.group) {
-      // TODO: type
         emit('handle-group', { optionId: props.id, checked: isChecked })
+        return
     } else {
         emit('update:checked', isChecked)
     }

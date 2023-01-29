@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import { PropType } from 'vue'
 import KCheckbox from '@/components/KCheckbox/KCheckbox.vue'
 
 const props = defineProps({
     value: {
-        type: Array,
+        type: Array as PropType<Array<string>>,
         required: true,
     },
     name: {
@@ -13,8 +14,7 @@ const props = defineProps({
     options: {
         type: Array,
         required: true,
-      // TODO: type
-        validator: (val) => {
+        validator: (val: Array<{ name: string; id: string }>) => {
             return val.every(
                 (opt) => Object.hasOwn(opt, 'name') && Object.hasOwn(opt, 'id'),
             )
@@ -22,25 +22,24 @@ const props = defineProps({
     },
 })
 
-// TODO: type
 const emit = defineEmits<{
-    (e: 'update:value', v: Object): void
+    (e: 'update:value', v: string[]): void
 }>()
 
-const checkForExisting = (id: string) => {
-    return props.value?.includes(id)
-}
+const checkForExisting = (id: string) => props.value.includes(id)
 
-// TODO: type
-const handleCheckboxGroup = (params) => {
-    const foo = [...props.value]
+const handleCheckboxGroup = (params: {
+    optionId: string
+    checked: boolean
+}) => {
+    const optionsCopy = [...props.value]
 
     if (params.checked) {
-        foo.push(params.optionId)
+        optionsCopy.push(params.optionId)
     } else {
-        foo.splice(foo.indexOf(params.optionId), 1)
+        optionsCopy.splice(optionsCopy.indexOf(params.optionId), 1)
     }
-    emit('update:value', foo)
+    emit('update:value', optionsCopy)
 }
 </script>
 
