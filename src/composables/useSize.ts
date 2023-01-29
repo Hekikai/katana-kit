@@ -14,22 +14,22 @@ const defaultSizes: ISizes = {
     },
 }
 
-// TODO: fix type error
 export default <T extends { size?: ISizeName }>(
     props: T,
     sizes: ISizes = defaultSizes,
 ): ComputedRef<ISize | null> => {
-    if (!props.size) {
-        return computed(() => null)
-    } else {
+    return computed(() => {
+        if (!props.size) {
+            return null
+        }
         const isSizeInProps = props.size in sizes
 
-        if (!isSizeInProps) return computed(() => null)
+        if (!isSizeInProps) return null
 
-        return computed(() => ({
+        return {
             height: sizes[props.size].height,
             padding: sizes[props.size].padding,
             fontSize: sizes[props.size].fontSize,
-        }))
-    }
+        }
+    })
 }
