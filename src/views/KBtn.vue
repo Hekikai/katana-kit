@@ -76,7 +76,7 @@
 </template>
 
 <script setup lang="ts">
-import KBtn from '@/components/KButton/KBtn.vue'
+import KBtn from '@/components/KBtn/KBtn.vue'
 import { IColors } from '@/types'
 
 const colors = {
