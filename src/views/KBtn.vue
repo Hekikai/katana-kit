@@ -66,12 +66,12 @@
             @click="onClick"
             size="sm"
         />
-      <k-btn
-        label="@click"
-        color="warning"
-        @click="onClick"
-        size="lg"
-      />
+        <k-btn
+            label="@click"
+            color="warning"
+            @click="onClick"
+            size="lg"
+        />
     </div>
 </template>
 
@@ -92,12 +92,3 @@ const onClick = () => {
     alert('Click!')
 }
 </script>
-
-<style scoped lang="scss">
-.line {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 1rem;
-}
-</style>

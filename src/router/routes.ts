@@ -14,9 +14,14 @@ export const routes = [
         component: () => import('@/views/KBtn.vue'),
         name: 'Button',
     },
-    // {
-    //     path: '/checkbox',
-    //     component: () => import('@/views/KCheckbox.vue'),
-    //     name: 'Checkbox',
-    // },
+    {
+        path: '/checkbox',
+        component: () => import('@/views/KCheckbox.vue'),
+        name: 'Checkbox',
+    },
+    {
+        path: '/radio',
+        component: () => import('@/views/KRadio.vue'),
+        name: 'Radio',
+    },
 ]
