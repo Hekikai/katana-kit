@@ -53,7 +53,7 @@ const telephones = ref([
     },
 ])
 
-const selectedPhone = ref('Samsung')
+const selectedPhone = ref('')
 const disabledRadio = ref(true)
 const disabledRadioValue = ref('yes')
 </script>
