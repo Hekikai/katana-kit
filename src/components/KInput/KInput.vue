@@ -1,16 +1,23 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { ErrorObject } from '@vuelidate/core'
+
 enum InputTypes {
     text = 'text',
+    password = 'password',
+    number = 'number',
+    email = 'email',
 }
 
-withDefaults(
+const props = withDefaults(
     defineProps<{
-        value: string
+        value: string | number
         name: string
         placeholder: string
         label: string
+        width?: string
+        error?: Array<ErrorObject>
         type: keyof typeof InputTypes
-        width: string
     }>(),
     {
         value: '',
@@ -23,8 +30,15 @@ const emit = defineEmits<{
 }>()
 
 const handleInput = (event: Event) => {
-  emit('update:value', (<HTMLInputElement>event.target).value)
+    emit('update:value', (<HTMLInputElement>event.target).value)
 }
+
+const foo = computed(() => {
+    if (props.type === 'password') {
+        return { autocomplete: 'on' }
+    }
+    return null
+})
 </script>
 
 <template>
@@ -47,6 +61,15 @@ const handleInput = (event: Event) => {
         >
             {{ label }}
         </label>
+        <transition-group>
+            <div
+                class="input-error"
+                v-for="el in error"
+                :key="el.$uid"
+            >
+                {{ el.$message }}
+            </div>
+        </transition-group>
     </div>
 </template>
 
