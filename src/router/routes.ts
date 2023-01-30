@@ -29,4 +29,9 @@ export const routes = [
         component: () => import('@/views/KProgress.vue'),
         name: 'Progress',
     },
+    {
+        path: '/tabs',
+        component: () => import('@/views/KTabs.vue'),
+        name: 'Tabs',
+    },
 ]

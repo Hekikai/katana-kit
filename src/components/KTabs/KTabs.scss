@@ -1,0 +1,33 @@
+.k-tab {
+    &-nav {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        &__item {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            border-radius: 7px;
+            cursor: pointer;
+            border: 1px solid var(--k-primary);
+            padding: 0 20px;
+            font-size: 15px;
+            &:hover {
+                background: var(--k-primary-hover);
+                color: #fff;
+                transition: 0.2s;
+            }
+            &.selected {
+                background: var(--k-primary);
+                color: #fff;
+            }
+        }
+    }
+    &-content {
+        padding: 20px;
+        border-radius: 7px;
+        background: #fff;
+    }
+}
