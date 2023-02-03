@@ -1,3 +1,5 @@
+import { Ref } from "vue";
+
 export type IColors =
     | 'primary'
     | 'secondary'
@@ -15,3 +17,10 @@ interface ISize {
 }
 
 export type ISizes = Record<ISizeName, ISize>
+
+interface TModelValue<T> {
+  modelValue: Ref<T>
+  updateModelValue: (val: T) => void
+}
+
+export type IKTabs = TModelValue<string>
