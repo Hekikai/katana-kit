@@ -31,15 +31,3 @@ export default defineComponent({
             )
     },
 })
-
-// render: () =>
-//   h(
-//     'span',
-//     {
-//       class: 'k-tab-nav__item',
-//       onClick(el: string) {
-//         // TODO: ??????????
-//       },
-//     },
-//     'text',
-//   ),
