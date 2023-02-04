@@ -30,8 +30,13 @@ export const routes = [
         name: 'Progress',
     },
     {
-        path: '/tabs',
+        path: '/input',
+        component: () => import('@/views/KInput.vue'),
+        name: 'Input',
+    },
+    {
+     path: '/tabs',
         component: () => import('@/views/KTabs.vue'),
         name: 'Tabs',
-    },
+    }
 ]
