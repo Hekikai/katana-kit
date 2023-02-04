@@ -34,4 +34,9 @@ export const routes = [
         component: () => import('@/views/KInput.vue'),
         name: 'Input',
     },
+    {
+     path: '/tabs',
+        component: () => import('@/views/KTabs.vue'),
+        name: 'Tabs',
+    }
 ]
