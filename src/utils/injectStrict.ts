@@ -1,5 +1,5 @@
 import { inject, InjectionKey } from 'vue'
-import { IKTabs } from '@/types'
+import { IKTabs } from '@/components/KTabs/types'
 
 export const KTabsKey: InjectionKey<IKTabs> = Symbol('KTabs')
 
