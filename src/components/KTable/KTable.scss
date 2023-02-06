@@ -1,0 +1,72 @@
+.k-table {
+    width: 100%;
+    margin-bottom: 40px;
+    margin-top: 15px;
+
+    &-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    &-head {
+        padding: 5px 16px;
+        display: grid;
+        column-gap: 10px;
+        align-items: center;
+        border-bottom: 2px solid #eeeff4;
+        background: #fff;
+
+        &__name {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: #999;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+    }
+
+    &-row {
+        position: relative;
+        padding: 0 16px;
+        display: grid;
+        column-gap: 10px;
+        align-items: center;
+
+        border-bottom: 2px solid #eeeff4;
+        @media screen and (max-width: 767px) {
+            display: block;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &--items-center {
+            justify-items: center;
+        }
+    }
+
+    &-column {
+        padding: 15px 0;
+        position: relative;
+
+        &-image {
+            max-width: 100%;
+            @media screen and (max-width: 767px) {
+                max-width: 200px;
+            }
+        }
+
+        &__title {
+            margin-right: 5px;
+            display: none;
+            @media screen and (max-width: 767px) {
+                display: inline-block;
+            }
+        }
+    }
+}
